@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
-<html lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Primary Meta Tags -->
@@ -21,10 +22,14 @@
     <script src="./Wedding_files/jquery.coundown.js.download"></script>
     <link rel="icon" type="image/png" href="https://fanaweds.com/image/Nikkah-ring.png">
     <style>
-	.google-calendar-link img {
-            max-width: 100%;
-            height: auto;
-        }
+	    .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+	
         .hero .title {
         font-family: 'Rouge Script', sans-serif;
         font-weight: 700;
@@ -87,6 +92,7 @@
         .hero .tempatwaktu {
             font-size: 1.1rem;
         }
+	    
     }
     /* Media Queries - E */
 
@@ -160,6 +166,7 @@
     }, 1000);
 
     </script>	
+    <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 </head>
 
 <body data-aos-easing="ease-out" data-aos-duration="800" data-aos-delay="0">
@@ -342,7 +349,14 @@
 			    <span class="location">https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA</span>
 		     </div>
 		</div>	
-		
+		<div class="button-row">
+		    <add-to-calendar-button name="Nikkah: Omaima & Faraz" 
+				startDate="12/16/2023 02:00 PM" endDate="12/16/2023 06:00 PM" 
+			    	location="https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA" options="'Apple','Google','iCal','Microsoft365','Outlook.com','Yahoo'" 
+			    	timeZone="Asia/Karachi" iCalFileName="Reminder-Event" buttonStyle="date" listStyle="modal" debug>
+		    </add-to-calendar-button>
+		</div>
+
             </div>
         </div>
         <!-- End Waktu Content -->

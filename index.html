@@ -384,6 +384,7 @@
         });
     </script>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('addToCalendar').addEventListener('click', function() {
             addToCalendar();
         });
@@ -391,22 +392,24 @@
         function addToCalendar() {
             // Event details
             var eventName = 'Your Wedding';
-            var eventDate = '20231216T020000'; // Format: YYYYMMDDTHHMMSS
+            var eventDate = '20231216T140000Z'; // Format: YYYYMMDDTHHMMSSZ
             var locationName = 'Ineventorspk';
             var locationURL = 'https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA';
 
             // Create a calendar link
             var calendarLink = 'data:text/calendar;charset=utf8,' + encodeURIComponent(`
-		BEGIN:VCALENDAR
-		VERSION:2.0
-		BEGIN:VEVENT
-		SUMMARY:${eventName}
-		DTSTART:${eventDate}
-		DESCRIPTION:${eventName}
-		X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS=${encodeURIComponent(locationName)};X-APPLE-RADIUS=49;X-TITLE=${encodeURIComponent(locationName)}:${encodeURIComponent(locationURL)}
-		END:VEVENT
-		END:VCALENDAR
-		`);
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:${eventName}
+DTSTART:${eventDate}
+DESCRIPTION:${eventName}
+LOCATION:${locationName}
+URL:${locationURL}
+END:VEVENT
+END:VCALENDAR
+`);
 
             // Create an anchor element and trigger a click to initiate download
             var link = document.createElement('a');
@@ -416,6 +419,7 @@
             link.click();
             document.body.removeChild(link);
         }
-    </script>
+    });
+</script>
 </body>
 </html>

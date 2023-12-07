@@ -156,6 +156,40 @@
     }, 1000);
 
     </script>
+	<script>
+        document.getElementById('addToCalendar').addEventListener('click', function() {
+            addToCalendar();
+        });
+
+        function addToCalendar() {
+            // Event details
+            var eventName = 'Your Wedding';
+            var eventDate = '20231231T120000'; // Format: YYYYMMDDTHHMMSS
+            var locationName = 'Wedding Venue';
+            var locationURL = 'https://example.com/wedding-venue';
+
+            // Create a calendar link
+            var calendarLink = 'data:text/calendar;charset=utf8,' + encodeURIComponent(`
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${eventName}
+DTSTART:${eventDate}
+DESCRIPTION:${eventName}
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS=${encodeURIComponent(locationName)};X-APPLE-RADIUS=49;X-TITLE=${encodeURIComponent(locationName)}:${encodeURIComponent(locationURL)}
+END:VEVENT
+END:VCALENDAR
+`);
+
+            // Create an anchor element and trigger a click to initiate download
+            var link = document.createElement('a');
+            link.href = calendarLink;
+            link.download = 'event.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </head>
 
 <body data-aos-easing="ease-out" data-aos-duration="800" data-aos-delay="0">
@@ -326,6 +360,9 @@
 		<div class="column is-12 has-vertically-aligned-content aos-init" data-aos="fade-left">
 			<h1 class="waktu is-larger has-text-centered">
 				<a href="./Wedding_files/card-1.jpg" download="card-1.jpg" style="color: #996E6D;">Download Card</a>
+			</h1>
+			<h1 class="waktu is-larger has-text-centered">
+				<a id="addToCalendar" style="color: #996E6D;">Add to Calendar</a>
 			</h1>
 		</div>
             </div>

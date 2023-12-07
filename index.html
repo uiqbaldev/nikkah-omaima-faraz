@@ -328,7 +328,7 @@
 				<a href="./Wedding_files/card-1.jpg" download="card-1.jpg" style="color: #996E6D;">Download Card</a>
 			</h1>
 			<h1 class="waktu is-larger has-text-centered">
-				<a target="_blank" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nikkah-+Omaima+&+Faraz&details=Details&location=https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA&dates=20231216T140000Z/20231216T160000Z">Add to Google Calendar</a>
+				<a target="_blank" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nikkah:++Omaima+and+Faraz&location=https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA&dates=20231216T140000Z/20231216T160000Z">Add to Google Calendar</a>
 			</h1>
 		</div>
             </div>
@@ -383,43 +383,6 @@
             duration: 800,
         });
     </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('addToCalendar').addEventListener('click', function () {
-            addToCalendar();
-        });
-
-        function addToCalendar() {
-            // Event details
-            var eventName = 'Your Wedding';
-            var eventDate = '20231216T140000Z'; // Format: YYYYMMDDTHHMMSSZ
-            var locationName = 'Ineventorspk';
-            var locationURL = 'https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA';
-
-            // Create a calendar file
-            var calendarContent = `BEGIN:VCALENDAR
-VERSION:2.0
-CALSCALE:GREGORIAN
-BEGIN:VEVENT
-SUMMARY:${eventName}
-DTSTART:${eventDate}
-DESCRIPTION:${eventName}
-LOCATION:${locationName}
-URL:${locationURL}
-END:VEVENT
-END:VCALENDAR`;
-
-            var blob = new Blob([calendarContent], { type: 'text/calendar' });
-
-            // Create an anchor element and trigger a click to initiate download
-            var link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = 'event.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    });
 </script>
 </body>
 </html>

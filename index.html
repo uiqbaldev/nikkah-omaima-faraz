@@ -384,8 +384,8 @@
         });
     </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('addToCalendar').addEventListener('click', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('addToCalendar').addEventListener('click', function () {
             addToCalendar();
         });
 
@@ -396,9 +396,8 @@
             var locationName = 'Ineventorspk';
             var locationURL = 'https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA';
 
-            // Create a calendar link
-            var calendarLink = 'data:text/calendar;charset=utf8,' + encodeURIComponent(`
-BEGIN:VCALENDAR
+            // Create a calendar file
+            var calendarContent = `BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
@@ -408,12 +407,13 @@ DESCRIPTION:${eventName}
 LOCATION:${locationName}
 URL:${locationURL}
 END:VEVENT
-END:VCALENDAR
-`);
+END:VCALENDAR`;
+
+            var blob = new Blob([calendarContent], { type: 'text/calendar' });
 
             // Create an anchor element and trigger a click to initiate download
             var link = document.createElement('a');
-            link.href = calendarLink;
+            link.href = window.URL.createObjectURL(blob);
             link.download = 'event.ics';
             document.body.appendChild(link);
             link.click();

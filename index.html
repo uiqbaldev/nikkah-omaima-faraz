@@ -155,41 +155,7 @@
         }
     }, 1000);
 
-    </script>
-	<script>
-        document.getElementById('addToCalendar').addEventListener('click', function() {
-            addToCalendar();
-        });
-
-        function addToCalendar() {
-            // Event details
-            var eventName = 'Your Wedding';
-            var eventDate = '20231216T020000'; // Format: YYYYMMDDTHHMMSS
-            var locationName = 'Ineventorspk';
-            var locationURL = 'https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA';
-
-            // Create a calendar link
-            var calendarLink = 'data:text/calendar;charset=utf8,' + encodeURIComponent(`
-BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:${eventName}
-DTSTART:${eventDate}
-DESCRIPTION:${eventName}
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS=${encodeURIComponent(locationName)};X-APPLE-RADIUS=49;X-TITLE=${encodeURIComponent(locationName)}:${encodeURIComponent(locationURL)}
-END:VEVENT
-END:VCALENDAR
-`);
-
-            // Create an anchor element and trigger a click to initiate download
-            var link = document.createElement('a');
-            link.href = calendarLink;
-            link.download = 'event.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
+    </script>	
 </head>
 
 <body data-aos-easing="ease-out" data-aos-duration="800" data-aos-delay="0">
@@ -416,6 +382,40 @@ END:VCALENDAR
             easing: "ease-out",
             duration: 800,
         });
+    </script>
+<script>
+        document.getElementById('addToCalendar').addEventListener('click', function() {
+            addToCalendar();
+        });
+
+        function addToCalendar() {
+            // Event details
+            var eventName = 'Your Wedding';
+            var eventDate = '20231216T020000'; // Format: YYYYMMDDTHHMMSS
+            var locationName = 'Ineventorspk';
+            var locationURL = 'https://maps.app.goo.gl/kgjiGX5cmmz5iZuTA';
+
+            // Create a calendar link
+            var calendarLink = 'data:text/calendar;charset=utf8,' + encodeURIComponent(`
+		BEGIN:VCALENDAR
+		VERSION:2.0
+		BEGIN:VEVENT
+		SUMMARY:${eventName}
+		DTSTART:${eventDate}
+		DESCRIPTION:${eventName}
+		X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS=${encodeURIComponent(locationName)};X-APPLE-RADIUS=49;X-TITLE=${encodeURIComponent(locationName)}:${encodeURIComponent(locationURL)}
+		END:VEVENT
+		END:VCALENDAR
+		`);
+
+            // Create an anchor element and trigger a click to initiate download
+            var link = document.createElement('a');
+            link.href = calendarLink;
+            link.download = 'event.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 </html>

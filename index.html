@@ -22,6 +22,37 @@
     <script src="./Wedding_files/jquery.coundown.js.download"></script>
     <link rel="icon" type="image/png" href="https://fanaweds.com/image/Nikkah-ring.png">
     <style>
+	    .contact-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.contact-buttons a {
+    display: block;
+    background-color: #25D366; /* WhatsApp color */
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-buttons a.email-button {
+    background-color: #DB4437; /* Gmail color */
+}
+
+.contact-buttons a:hover {
+    background-color: #128C7E; /* WhatsApp hover color */
+}
+
+.contact-buttons a.email-button:hover {
+    background-color: #DD4B39; /* Gmail hover color */
+}
 	    .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -389,7 +420,15 @@
         <!-- End Tentang Sherly dan Daeng -->
     </div>
     <!-- End Main Content -->
-
+<!-- WhatsApp and Email button -->
+    <div class="contact-buttons">
+        <a href="mailto:uiqbal.edu@gmail.com" title="Email" class="email-button">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://wa.me/+923212238809" title="WhatsApp" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     <!-- Begin Footer -->
    <div class="footer">
     <div class="container">

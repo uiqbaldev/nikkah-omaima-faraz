@@ -400,7 +400,13 @@ html {
 .footer a .nav-item {
     color: whitesmoke;
 }
+.whatsapp-icon {
+    color: #25D366; /* Set WhatsApp icon color to green */
+}
 
+.email-icon {
+    color: #DB4437; /* Set Email icon color to Gmail red */
+}
 .fa-download {
     color: #43485c;
 }
